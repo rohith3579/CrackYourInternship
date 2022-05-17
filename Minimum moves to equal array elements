@@ -1,0 +1,24 @@
+/*Minimum Moves to Equal Array Elements
+Medium
+
+
+Given an integer array nums of size n, return the minimum number of moves required to make all array elements equal.
+
+In one move, you can increment n - 1 elements of the array by 1.
+*/
+class Solution {
+    public int minMoves(int[] nums) {
+        int small=nums[0],sum=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]<small){
+                small=nums[i];
+            }
+            sum=sum+nums[i];
+        }
+        
+        int m=sum-(nums.length)*small;
+         return m;
+    }
+   
+}
